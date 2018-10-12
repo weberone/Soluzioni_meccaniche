@@ -1,0 +1,281 @@
+
+
+.angolo_grigio{
+	position: absolute;
+	img{
+		width: 32.35%;
+		height: auto;
+	}
+}
+
+.flexslider{
+	border: none;
+    margin: 0px;
+    z-index: 10;
+    overflow: hidden;
+    @media screen and (max-width: 767px) { 
+					@include box_shadow;
+				}
+ //   @include box_shadow;
+ 	.slides{
+ 		li{
+ 			position: relative;
+ 		}
+ 		.immagine{
+ 			//@include brightness;
+ 			overflow: hidden;
+	 		.cont{
+	 			//@include contrast;
+	 		}
+ 		}
+ 		img{
+ 			position: relative;
+     		z-index: 0;
+     		//@include grayscale;
+     		@media screen and (max-width: 1440px) { 
+	
+			}
+			@media screen and (max-width: 1310px) { 
+				
+			}
+			@media screen and (max-width: 1280px) { 
+				//width: 145%;
+			}
+     		@media screen and (max-width: 1150px) { 
+				width: 130%;
+			}
+			@media screen and (max-width: 767px) { 
+				width: 100%;
+			}
+     	}
+    } 
+	.flex-caption {
+	    position: absolute;
+	    right: 160px;
+	   	bottom:0px;
+	    z-index: 0;
+	    overflow: visible;
+		//text-align: center;
+		width: 50%;
+		height: auto;
+		z-index: 1;
+		&.bagliore{
+			&:before{
+				position: absolute;
+				width: auto;
+				height: auto;
+				left: -500px;
+	    		top: -300px;
+				z-index: 0;
+				display: block;
+			    content: url('../images/baglio.png');
+			    opacity: 0.7;
+				@media screen and (max-width: 767px) { 
+					display: none;
+				}
+			}
+		}
+		
+
+		&:after{
+			position: absolute;
+			width: auto;
+			height: auto;
+			left: 0px;
+			bottom: 0px;
+			top: auto;
+			//background: red;
+			line-height: 0px;
+			z-index: 0;
+		  content: url('../images/barretta_slider.png');
+
+		  @media screen and (max-width: 767px) { 
+		  	display: none;
+		  }
+		}
+		@media screen and (max-width: 767px) { 
+			position: relative;
+			right: auto;
+			bottom: auto;
+			width: 100%;
+		}
+		&.sx_cap{
+			right: auto;
+			left: 160px;
+			@media screen and (max-width: 767px) { 
+				left: auto;
+			}
+		}
+	    .testi{
+	    	//position: absolute;
+	    	position: relative;
+	    	z-index: 2;
+	    	top: 0px;
+	    	//padding: 60px 35px;
+	    	padding: 35px 60px 65px;
+	    	text-align: left;
+	    	@media screen and (max-width: 767px) { 
+				padding: 30px;
+				text-align: center;
+			}
+			@media screen and (max-width: 580px) { 
+				//padding: 10% 6%;
+			}
+	    	.block{
+	    		color: $blu;
+	    		//text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	    		padding-bottom: 20px;
+	    		&.txt_bianco{
+	    			color: $bianco;
+	    			@media screen and (max-width: 767px) { 
+						color: $blu;
+					}
+	    		}
+				
+				p{
+					
+				}
+	    	}
+	    }
+	}
+	.flex-direction-nav{
+		a{
+			top: 50%!important;
+			@media screen and (max-width: 767px) { 
+				top: auto!important;
+				//bottom: 30px;
+				    bottom: 25%;
+			}
+		}
+		
+
+		.flex-prev {
+			//left: 22.5%; 
+			left: 50px;
+			opacity: 0.5;
+			@media screen and (max-width: 1280px) { 
+				//left: 47%;
+			}
+			@media screen and (max-width: 767px) { 
+				//left: 34%;
+			}
+			@media screen and (max-width: 600px) { 
+				left: 20px;
+			}
+			@media screen and (max-width: 580px) { 
+				//left: 37%;
+			}
+		}
+		.flex-next {
+			right: 50px;
+			opacity: 0.5;
+			@media screen and (max-width: 600px) { 
+				right: 20px;
+			}
+		}
+		& a:before {
+		  display: inline-block;
+		  content: url('../images/freccia_sx.png');
+		}
+		& a.flex-next:before {
+		  content: url('../images/freccia_dx.png');
+		}
+	}
+	&:hover{
+		.flex-direction-nav{
+			.flex-prev {
+				left: 50px;
+				opacity: 1;
+				@media screen and (max-width: 600px) { 
+					left: 20px;
+				}
+			}
+			.flex-next {
+		  		right: 50px;
+		  		opacity: 1;
+		  		@media screen and (max-width: 600px) { 
+				right: 20px;
+			}
+			}
+		}
+	}
+	.flex-control-nav {
+	    width:auto;
+	    bottom: 90px;
+    	right: 150px;
+    	bottom: 50px;
+    	right: 50px;
+    	display: none;
+    	@media screen and (max-width: 767px) { 
+					right: 150px;
+					bottom: 20px;
+					display: none;
+				}
+	    li{
+	    	margin: 12px;
+	    }
+	}
+	.flex-control-paging{
+		li{
+			a{
+	
+			    &:hover {
+		
+				}
+				&.flex-active {
+				    
+				}
+			}
+		}
+	} 
+}
+
+
+.myClass{ 
+	margin-top: 200px;
+}
+
+.flex-control-paging li a {
+    width: 17px;
+    height: 5px;
+    display: block;
+    background: $bianco;
+
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
+    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
+    -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+
+}
+
+
+.flex-control-paging li a.flex-active {
+    background: $giallo;
+
+    cursor: default;
+    height: 10px;
+}
+
+.flex-control-paging li a:hover {
+    background: $bianco;
+}
+
+
+.angolo_grigio, .flex-caption{
+	width: 29.63%;
+	@media screen and (max-width: 1280px) {
+		width: 42%;
+	} 
+	@media screen and (max-width: 767px) {
+		width: 60%;
+	} 
+}
+
+
+
+

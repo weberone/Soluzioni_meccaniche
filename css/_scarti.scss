@@ -1,0 +1,636 @@
+
+
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+  iframe,
+  embed,
+  object {
+    max-width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+
+
+.marg_header{
+  /*margin-top: 0;
+  @media screen and (max-width: 767px) {
+    margin-top: 117px;
+    .gradient_top{
+      display: none;
+    }
+  } */
+}
+
+.marg_header2{
+  height: 116px;
+  margin-top: -116px;
+  position: absolute;
+  @media screen and (max-width: 767px) {
+    //height: 100px;
+    margin-top: -116px;
+    //width: 100%;
+    //background: red;
+    //z-index: 200;
+  //position: relative;
+  } 
+}
+
+
+
+
+
+.red{
+  color: $viola;
+  display: inline-block;
+}
+
+#vsel{
+  //display: inline-block;
+  //padding-top: 10px;
+  //background: $navi2 url("../images/grad_video.png")top -180px center repeat-x!important;
+
+}
+
+
+.bg_events{
+  width: 90%;
+    padding: 0px 5%;
+    padding-top: 10px;
+    &.bg{
+      background: $grigio_chiaro url("../images/grad_video.png")top center repeat-x!important;
+      //background: $grigio_chiaro url("../images/shiva3.png");
+      //background-size: 50px;
+      //background: $grigio_chiaro;
+      //background: $grigio_chiaro url("../images/shiva3.png")center center no-repeat!important;
+      //background-size:1000%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.benefits_cont{
+  width: 100%;
+  position: relative;
+  //padding: 20px 0px;
+  //height: 00px;
+
+.testi_ben{
+  //position: relative;
+  top: 0px;
+  left: 0px;
+  margin: 30px 0px;
+  //margin-top: 4.5%;
+
+  .blocco{
+    //width: 100%;
+    height: 7%;
+    overflow: hidden;
+    //height: 100px;
+    position: absolute;
+    //opacity: 0.9;
+    display: block;
+    //right: 0px;
+    text-align: right;
+    font-size: 80%;
+    line-height: 110%;
+    //background: #000;
+    color: $viola;
+    text-transform: uppercase;
+    left: 36%;
+    @media screen and (max-width: 1380px) {
+      font-size: 60%;
+      line-height: 100%;
+    } 
+    @media screen and (max-width: 1050px) { //767
+      position: relative;
+      top: 0px;
+      left: 0px;
+      text-align: center;
+      width: 80%;
+      height: auto;
+      padding: 15px 10%;
+      font-size: 100%;
+      line-height: 100%;
+    } 
+    .cent_txt{
+      display: table;
+      width: 100%;
+      height: 100%;
+      .cent_txt_int{
+        display:table-cell;
+          vertical-align: middle;
+      }
+    }
+  }
+  .a1{top: 4.8%; right: 35%; top: 1.8%;
+    right: 37%;}
+  .a2{top: 18.4%; right: 30%;     top: 10.3%;
+    right: 33%;}
+  .a3{top: 31.8%; right: 27.5%;     top: 22%;
+    right: 29.7%;}
+  .a4{top: 45.2%; right: 26.6%;     top: 38.2%;
+    right: 27.2%;}
+  .a5{top: 58.5%; right: 27%;     top: 56.5%;
+    right: 27%;}
+  .a6{top: 72%; right: 28.8%; top: 75.5%;
+    right: 29.8%;}
+  .a7{top: 85.3%; right: 33%;     top: 89.3%;
+    right: 34.5%;}
+  
+}
+.img_ben{
+  img{
+    padding: 0px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+}
+
+
+
+
+
+
+
+.benefits_bg{
+  //background: url("../images/grad_video.png") center top -190px repeat-x;
+}
+
+
+
+
+
+
+
+
+
+.spacer{
+  position: relative;
+  height: 40px;
+}
+
+
+
+
+
+
+.w100{
+  width: 100%!important;
+  float: none;
+  text-align: center;
+  padding: 0px!important;
+  nav.social{
+    text-align: center!important;
+  }
+  .other{
+    li{
+      width: 33.33%;
+      height: 500px;
+      overflow: hidden;
+      float: left;
+      @media screen and (max-width: 1024px) {
+        width: 50%;
+        height: 380px;
+      }
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        height: auto;
+      } 
+      .divisorio{
+        margin: 20px 0px 20px 0px!important;
+      }
+      &:last-child{
+        margin-bottom: 20px;
+      }
+    }
+  } 
+  .testimonial{
+    li{
+      width: 100%;
+      //height: 500px;
+      overflow: hidden;
+      //float: left;
+      //background:yellow;
+      border-bottom: 1px solid $grigio;
+      text-align: center;
+      padding: 40px 0px 70px;
+      background: url("../images/logo_domina_mini.png") center bottom 24px no-repeat;
+      background-size: 25px;
+      &:last-child{
+        border-bottom: none;
+      }
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        padding: 20px 0px 70px;
+      } 
+      h4{
+        padding: 10px 0px 0px 0px; 
+        text-transform: none; 
+        color: $viola;    
+        font-size: 16px!important; line-height: 16px!important;
+        font-size: inherit;
+      }
+      p{
+        font-style: italic;
+      }
+    }
+  } 
+  &.bg_dark{
+    background: $blu;
+    .testo_intro{
+      background: none;
+      h3{
+        color: $bianco;
+      }
+    }
+  }
+}
+
+
+
+
+    .shiva1{
+      background: url("../images/shiva.png")center center no-repeat;
+      background-size: contain;
+    }
+    .shiva2{
+      background: url("../images/shiva2.png")center center no-repeat;
+      background-size: contain;
+    }
+    .shiva3{
+      background: url("../images/shiva3.png")center center no-repeat;
+      background-size: contain;
+    }
+    .shiva4{
+      background: url("../images/shiva4.png")center center no-repeat;
+      background-size: contain;
+    }
+    .shiva5{
+      background: url("../images/shiva5.png")center center no-repeat;
+      background-size: contain;
+    }
+    .shiva6{
+      background: url("../images/shiva6.png")center center no-repeat;
+      background-size: contain;
+    }
+
+.img_shiva{
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  bottom: 0px;
+  top:7px;
+  z-index: 20;
+  //background: $grigio_chiaro url("../images/shiva.png") center bottom no-repeat;
+  //background-size: 64%;
+  background: $grigio_chiaro;
+  width: 32.56%;
+  z-index: 0;
+  &:after{
+    content: url("../images/naseem_mini_logo.png");
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -20px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    float: none;
+    text-align: center;
+  } 
+}
+
+.alt_shiva_col{
+  margin-bottom: 380px;
+}
+
+
+
+.logo_shiva_col{
+  //margin-bottom: 380px;
+  background: $grigio_chiaro url("../images/shiva.png") center bottom no-repeat!important;
+  background-size: 64%!important;
+  margin-bottom: -7px!important;
+}
+ 
+.wpcf7-form input, .wpcf7-form textarea { 
+  background:$bianco; 
+  padding:16px 20px; 
+  border:1px solid $grigio; 
+  width: 60%;
+  max-width: 60%;
+  min-width: 60%;
+  font-size: 14px;
+  line-height: normal;
+  color: $blu;
+  @media screen and (max-width: 767px) {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  } 
+}
+
+.wpcf7-form p { 
+  color:$viola; 
+}
+
+.wpcf7-form .wpcf7-submit{
+  @include anim_hover_all;
+  @include regular;
+  padding: 7px 30px 4px;
+  text-transform: uppercase;
+  background: $viola;
+  color: $bianco;
+  display: inline-block;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 1px;
+  //border: 1px solid $alpha;
+  font-style: normal;
+  cursor: pointer;
+  width: auto!important;
+    max-width: auto!important;
+    min-width: auto!important;
+  @media screen and (max-width: 580px) {
+    //padding: 10px 18px;
+  } 
+  a{
+    color: inherit;
+  }
+  &:hover{
+    @include anim_hover_all;
+    background: $blu;
+    color: $bianco;
+    //border: 1px solid $viola;
+  }
+}
+
+div.wpcf7-response-output {
+    margin: 0px!important;
+}
+
+
+div.wpcf7-validation-errors {
+  margin-top: 40px!important;
+  border: none!important;
+    border-bottom: 1px solid #f00!important;
+    color: #f00!important;
+     font-size: 14px!important;
+}
+
+div.wpcf7-mail-sent-ok {
+  margin-top: 40px!important;
+  border: none!important;
+    border-bottom: 1px solid #398f14!important;
+    color: #398f14!important;
+     font-size: 14px!important;
+}
+
+span.wpcf7-not-valid-tip {
+    color: #f00;
+    font-size: 14px!important;
+    font-weight: normal;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news{
+  @media screen and (max-width: 767px) {
+        margin: 0px!important;
+        text-align: center; 
+      } 
+  li{
+    padding: 20px 20px;
+    border-bottom: 1px solid $grigio_chiaro;
+    @media screen and (max-width: 767px) {
+        padding: 20px 0px;
+      } 
+    @include anim_hover_all;
+    &:hover{
+      background: $grigio_chiaro;
+      @include anim_hover_all;
+    }
+  }
+  a{
+    li{
+      h4{font-size: 14px; margin-bottom: 12px;}
+      p{color: $nero;@include anim_hover_all; //@include regular; 
+        //text-transform: uppercase; 
+        font-size: 24px; line-height: 24px;}
+    }
+    &:hover{
+      text-decoration: none;
+      li{
+        h4{}
+        p{color: $viola; @include anim_hover_all; }
+      }
+    }
+  }
+}
+
+
+     
+ul.persone{
+  padding-top: 40px;
+  li{
+    width: 100%;
+    margin: 20px 0px;
+    display: inline-block;
+    border-bottom: 2px solid $grigio_chiaro;
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    } 
+    &:last-child{
+      border-bottom: none!important;
+    }
+    .img_persona{
+      width: 30%;
+      float: left;
+      //@include contrast;
+      @media screen and (max-width: 1024px) {
+        width: 50%;
+      } 
+      @media screen and (max-width: 530px) {
+        width: 100%;
+      } 
+      img{
+        width: 100%;
+        height: auto;
+        border-radius: 100%;
+        //@include grayscale;
+        border: 2px solid #c3c3c3;
+      }
+    }
+    .desc_persona{
+      width: 60%;
+      padding: 40px 5%;
+      float: left;
+      @media screen and (max-width: 1024px) {
+        width: 40%;
+      }  
+      @media screen and (max-width: 530px) {
+        width: 90%;
+      } 
+      h3{font-size: 36px; line-height: 32px; text-transform: capitalize; @include regular; margin-bottom: 10px;}
+      h5{color: $grigio; margin-bottom: 30px; font-size: 16px; line-height: 14px; text-transform: uppercase; @include  regular;}
+      p{}
+    }
+  }
+}
