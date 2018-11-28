@@ -9,7 +9,7 @@
   display: block;
   button{
     background: transparent!important;
-    top: 22px;
+    top: 16px;
     right: 0px;
     @include anim_hover_all;
     @media screen and (max-width: 767px) {
@@ -73,8 +73,8 @@
   top: 30px;
   left: 16px;
   right: 10px;
-  height: 4px;
-  background: $blu;
+  height: 3px;
+  background: $grigio_chiaro;
   border-radius: 0px;
 
 
@@ -86,8 +86,8 @@
   display: block;
   left: 0;
   width: 100%;
-  height: 4px;
-  background-color: $blu;
+  height: 3px;
+  background-color: $grigio_chiaro;
   border-radius: 0px;
   content: "";
   @media screen and (max-width: 450px) { 

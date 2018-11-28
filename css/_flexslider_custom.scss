@@ -7,16 +7,45 @@
 		height: auto;
 	}
 }
-
+.sfuma_top{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	&:after{
+		content: url("../images/effect.png");
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: auto;
+		z-index: 2;
+		@include anim_hover_all;
+	}
+}
 .flexslider{
 	border: none;
     margin: 0px;
     z-index: 10;
     overflow: hidden;
+    border-radius: 0px;
     @media screen and (max-width: 767px) { 
 					@include box_shadow;
 				}
  //   @include box_shadow;
+
+	 &.slider_home{
+			/*&:after{
+				content: url("../images/effect.png");
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: auto;
+				z-index: 2;
+				@include anim_hover_all;
+			}*/
+	}
+
  	.slides{
  		li{
  			position: relative;
@@ -58,7 +87,7 @@
 		//text-align: center;
 		width: 50%;
 		height: auto;
-		z-index: 1;
+		z-index: 5;
 		&.bagliore{
 			&:before{
 				position: absolute;
@@ -87,7 +116,7 @@
 			//background: red;
 			line-height: 0px;
 			z-index: 0;
-		  content: url('../images/barretta_slider.png');
+		  //content: url('../images/barretta_slider.png');
 
 		  @media screen and (max-width: 767px) { 
 		  	display: none;
@@ -112,10 +141,10 @@
 	    	z-index: 2;
 	    	top: 0px;
 	    	//padding: 60px 35px;
-	    	padding: 35px 60px 65px;
+	    	padding: 0px 0px 140px;
 	    	text-align: left;
 	    	@media screen and (max-width: 767px) { 
-				padding: 30px;
+				//padding: 30px;
 				text-align: center;
 			}
 			@media screen and (max-width: 580px) { 
@@ -139,6 +168,7 @@
 	    }
 	}
 	.flex-direction-nav{
+		z-index: 22;
 		a{
 			top: 50%!important;
 			@media screen and (max-width: 767px) { 
@@ -151,7 +181,7 @@
 
 		.flex-prev {
 			//left: 22.5%; 
-			left: 50px;
+			left: 4%;
 			opacity: 0.5;
 			@media screen and (max-width: 1280px) { 
 				//left: 47%;
@@ -167,7 +197,7 @@
 			}
 		}
 		.flex-next {
-			right: 50px;
+			right: 4%;
 			opacity: 0.5;
 			@media screen and (max-width: 600px) { 
 				right: 20px;
@@ -184,14 +214,14 @@
 	&:hover{
 		.flex-direction-nav{
 			.flex-prev {
-				left: 50px;
+				left: 4%;
 				opacity: 1;
 				@media screen and (max-width: 600px) { 
 					left: 20px;
 				}
 			}
 			.flex-next {
-		  		right: 50px;
+		  		right: 4%;
 		  		opacity: 1;
 		  		@media screen and (max-width: 600px) { 
 				right: 20px;
@@ -200,16 +230,19 @@
 		}
 	}
 	.flex-control-nav {
-	    width:auto;
-	    bottom: 90px;
-    	right: 150px;
+	    width:100%;
+	    display: inline-block;
+	    //bottom: 90px;
+    	//right: 150px;
     	bottom: 50px;
-    	right: 50px;
-    	display: none;
+    	//right: 50px;
+    	z-index: 2;
+    	text-align: center;
+    	//display: none;
     	@media screen and (max-width: 767px) { 
 					right: 150px;
 					bottom: 20px;
-					display: none;
+					//display: none;
 				}
 	    li{
 	    	margin: 12px;
@@ -236,30 +269,29 @@
 }
 
 .flex-control-paging li a {
-    width: 17px;
+    width: 5px;
     height: 5px;
+
     display: block;
     background: $bianco;
-
     cursor: pointer;
     text-indent: -9999px;
     -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
     -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
     -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 
 .flex-control-paging li a.flex-active {
-    background: $giallo;
-
+    background: $azzurro;
     cursor: default;
-    height: 10px;
+   // height: 10px;
 }
+
 
 .flex-control-paging li a:hover {
     background: $bianco;

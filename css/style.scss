@@ -17,15 +17,20 @@
    -webkit-transition: all 0s ease-in-out;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700');
+
+@mixin light {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+}
 
 @mixin regular {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
 }
 
 @mixin bold {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 }
 
@@ -71,6 +76,14 @@ box-shadow: 20px 20px 0px -2px rgba(238,225,14,1);
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+@mixin gradient_2color{
+	background: #e29649;
+	background: -moz-linear-gradient(45deg, #e29649 0%, #3399ca 100%);
+	background: -webkit-linear-gradient(45deg, #e29649 0%,#3399ca 100%);
+	background: linear-gradient(45deg, #e29649 0%,#3399ca 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e29649', endColorstr='#3399ca',GradientType=1 );
+}
+
 @import 'reset';
 @import 'color';
 @import 'burger';
@@ -81,8 +94,8 @@ box-shadow: 20px 20px 0px -2px rgba(238,225,14,1);
 body{
 	-webkit-overflow-scrolling: touch;
 	background: $bianco;
-	@include regular;
-	color: $nero;
+	@include light;
+	color: $navi;
 	margin: 0 auto;
 	font-size: 16px;
 	line-height:normal;
@@ -91,6 +104,8 @@ body{
 	-moz-appearance: none;
 	appearance: none;
 	padding-top: 141px;
+	padding-top: 35px;
+	padding-top: 4px;
 	@media screen and (max-width: 1024px) { 
 		font-size: 16px; 
 	}
@@ -119,7 +134,7 @@ body{
 		z-index: 2;
 	}
 	&:before  {
-		content: url("../images/logo_domina.png");
+		content: url("../images/logo_soluzioni_meccaniche.png");
 		transform: scale(.7);
 		position: absolute;
 		top:50%;
@@ -131,9 +146,9 @@ body{
 
 #menu_header{
 	width: 100%;
-	background: $blu;
+	background: $navi;
 	color: $bianco;
-	
+	border-bottom: 1px solid $navi-chiaro;	
 }
 
 h1{
@@ -143,7 +158,7 @@ h1{
 	letter-spacing: -1px;
 	text-transform: uppercase;
 	@include bold;
-	font-style: italic!important;
+	//font-style: italic!important;
 	padding-bottom: 10px;
 	@media screen and (max-width: 767px) {
 		font-size: 30px;
@@ -154,9 +169,9 @@ h1{
 h2{
 	font-size: 40px;
 	line-height: 38px;
-	color: $blu;
+	color: $azzurro;
 	text-transform: uppercase;
-	font-style: italic;
+	//font-style: italic;
 	@include bold;
 	@media screen and (max-width: 767px) {
 		font-size: 26px;
@@ -165,12 +180,12 @@ h2{
 }
 
 h3{
-	font-size: 32px;
-	line-height: 30px;
-	color: $blu;
+	font-size: 28px;
+	line-height: 28px;
+	color: $azzurro;
 	text-transform: uppercase;
-	font-style: italic;
-	@include bold;
+	//font-style: italic;
+	@include light;
 	@media screen and (max-width: 767px) {
 		font-size: 26px;
 		line-height: 24px;
@@ -178,11 +193,11 @@ h3{
 }
 
 h4{
-	font-size: 28px;
-	line-height: 26px;
-	color: $blu;
+	font-size: 25px;
+	line-height: 25px;
+	color: $azzurro;
 	text-transform: uppercase;
-	font-style: italic;
+	//font-style: italic;
 	@include bold;
 	@media screen and (max-width: 767px) {
 		font-size: 26px;
@@ -197,10 +212,11 @@ h4{
 h5{
 	font-size: 18px;
 	line-height: 16px;
-	color: $blu;
+	color: $azzurro;
 	text-transform: uppercase;
-	font-style: italic;
+	//font-style: italic;
 	@include bold;
+	margin-bottom: 20px;
 	@media screen and (max-width: 767px) {
 		
 	}
@@ -238,25 +254,64 @@ strong{
 	@include bold;
 }
 
-img{display: block;}
-
+img{
+	display: block;
+}
 
 .w100{
   width: 100%;
   float: none;
   text-align: center;
   padding: 0px;
-  &.bg_dark{
-    background: $blu;
-    .testo_intro{
-      background: none;
-      h3{
-        color: $bianco;
-      }
-    }
-  }
 }
 
+.bg_dark{
+	background: $navi url('../images/sfuma.png') no-repeat center bottom;
+	h3, h4{
+		color: $bianco;
+	}
+}
+
+.bg_grad{
+	@include gradient_2color;
+	
+	h3, h4{
+		color: $bianco;
+	}
+	p{
+		color: $bianco;
+		padding: 50px;
+	}
+}
+
+.marg_bot{
+	margin-bottom: 50px;
+}
+
+.testo_intro{
+	background: none;
+	h3, h4{
+		//color: $bianco;
+		//@include light;
+	}
+	&.ingranaggio{
+		background: url("../images/quad.png") center center no-repeat;
+		background-size: 80px;
+		padding: 50px 0px;
+		h3{
+			@include bold;
+			color: $azzurro;
+		}
+	}
+	&.pad_testo{
+		padding: 50px;
+		&.no_pad_top_mobile{
+			@media screen and (max-width: 960px) {
+				padding-top: 0px;
+			} 
+		}
+	}
+}
 
 .clear_float{clear:both;}
 
@@ -265,8 +320,8 @@ img{display: block;}
 }
 
 .evid{
-	color: $giallo;
-	@include bold;
+	color: $azzurro;
+	//@include light;
 }
 
 .marg_bott{
@@ -276,12 +331,14 @@ img{display: block;}
 .wrapper{
 	margin: 0 auto;
 	position: relative;
-	width: 85%;
+	width: 92%;
 	max-width: 2200px;
 	@media screen and (max-width: 767px) {
 		width: 90%;
 	}
 }
+
+
 
 header{
 	position: fixed;
@@ -289,10 +346,15 @@ header{
 	top: 0px;
 	@include anim_hover_all;
 	border-bottom: 1px solid transparent;
+	border-top: 5px solid $azzurro;
 	.head{
 		position: relative;
-		background: $bianco;
-		@include box_shadow;
+		//background-color: transparent;
+		//background: url("../images/effect.png") top center no-repeat;
+		//background-size: 100% 100%;
+		//background-color: red;
+		@include anim_hover_all;
+	
 		@media screen and (max-width: 450px) {
 		} 
 		.logo_head{
@@ -301,7 +363,7 @@ header{
     		position: relative;
     		z-index: 25;
 			top: 0px;
-			padding: 25px 0px;
+			padding: 20px 0px;
 			@include anim_hover_all;
 			@media screen and (max-width: 1440px) {
 					//top: 0px;
@@ -319,7 +381,7 @@ header{
 			    padding: 16px 0px;
 			} 
 			a{
-				content:  url("../images/logo_domina.png");
+				content:  url("../images/logo_soluzioni_meccaniche.png");
 				@include anim_hover_all;
 				display: block;
 				width: 100%;
@@ -333,9 +395,55 @@ header{
 	}
 }
 
+
+.btn_cover, .btn_video{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	opacity: 0.3;
+	z-index: 444;
+}
+
+.btn_video{
+	width: 24px;
+	height: 24px;
+	top: 40px;
+	//margin-top: -12px;
+	left: auto;
+	right: 70px;
+	opacity: 1;
+	background: url("../images/x.png") center center no-repeat;
+	background-size: contain;
+	position: absolute;
+	//z-index: 3000;
+	span{
+		//background: red;
+		display: inline-block;
+		width: 150px;
+		//margin-left: -100px;
+		position: absolute;
+		top: 6px;
+		right: 30px;
+		font-size: 12px;
+		line-height: 12px;
+		color: $grigio_chiaro;
+		text-align: right;
+		text-transform: uppercase;
+		@include regular;
+
+	}
+}
+
+.btn_cover{
+	//background: red;
+}
+
 #main_menu{
 	display: none;
 	text-align: center;
+	@include regular; 
 	font-size: 14px;
 	line-height: normal;
 	font-style: normal;
@@ -348,9 +456,15 @@ header{
 			position: relative;
 		}
 	}
+	.fas{
+		color: $arancione;
+		margin-right: 4px;
+	}
 	nav{
-	opacity: 0.95;
-		background: $grigio_chiaro;
+		//opacity: 0.95;
+		background: $navi;;
+		//order-bottom: 1px solid $bianco;
+		color: $bianco;
 		ul {
 		    list-style-type: none;
 		    li {
@@ -369,20 +483,21 @@ header{
 			    	@include anim_hover_all;
 				    text-transform: uppercase;
 				    text-decoration: none;
-				    color: $blu;
+				    color: $bianco;
+
 				    padding: 10px;
-				   	@include bold;
-				   	font-style: italic;
-				   	display: block;
+				   	//@include light;
+				   	//font-style: italic;
+				   	display: inline-block;
 				   	&:hover {						
 				   		@include anim_hover_all;
-						background: $giallo;
+						background: $arancione;
 						text-transform: uppercase;
 					}
 				}
 				&.active{
 					a{
-						background: $giallo!important;
+						background: $arancione!important;
 					}
 				}
 			}
@@ -404,7 +519,7 @@ header{
 	} 
 	.lang{
     	font-size: 14px;
-    	line-height: 40px;
+    	line-height: 36px;
     	//display: none;
     	color: $bianco;
     	@media screen and (max-width: 767px) {
@@ -416,8 +531,8 @@ header{
 		    color: $bianco;
 		    @include regular;
     		&.active, &:hover{
-	    		color: $giallo;
-	    		@include bold;
+	    		color: $azzurro;
+	    		@include light;
 	    	}
     	}
     }
@@ -433,38 +548,25 @@ header{
 				float: left;
 				line-height: 0px;
 		    	a{
-		    		font-size: 14px;
-					line-height: normal;
+		    		font-size: 11px;
+					line-height: 15px;
 					margin: 0px;
 					display: block;
 					padding: 10px 15px;
 			    	color: $bianco;
-			    	border-right: 1px solid $blu_scuro;
+			    	border-right: 1px solid $navi-chiaro;
 		    		text-transform: uppercase;
 				    @include regular;
 		    		&.active, &:hover{
-			    		color: $giallo;
+			    		color: $arancione;
 			    	}
 					@media screen and (max-width: 767px) {
 						padding: 7px 15px;
 					}
-
 			    	@media screen and (max-width: 450px) {
 						font-size: 10px;
 						padding: 12px 5px;
 					} 
-		    	}
-		    	&:last-child{
-					a{
-		    			background: $blu_scuro;
-		    			color: $giallo;
-		    			@include bold;
-		    			border-right: none;
-			    		&.active, &:hover{
-				    		color: $giallo;
-				    		@include bold;
-				    	}
-			    	}
 		    	}
 			}
 		}
@@ -474,12 +576,13 @@ header{
 
 #social_menu{
 	position: absolute; 
-	top: 38px; 
+	top: 35px; 
+	z-index: 1;
 	@include anim_hover_all;
 	font-style: normal;
 	@media screen and (max-width: 767px) {
-		color: $blu;
-		top: 20px;
+		color: $navi;
+		top: 30px;
 		@include anim_hover_all;
 	} 
 }
@@ -523,7 +626,7 @@ header{
 		float:left;
 		margin:0 8px 0 0;
 		cursor:pointer;
-		background:$blu;
+		background:$azzurro;
 		color:$bianco;
 		transition: 0.5s;
 		-moz-transition: 0.5s;
@@ -534,7 +637,7 @@ header{
 		} 
 		&:hover {
 			background:$bianco;
-			color:$blu;
+			color:$grigio;
 			transition: 0.5s;
 			-moz-transition: 0.5s;
 			-webkit-transition: 0.5s;
@@ -566,17 +669,17 @@ header{
 
 .btn{
 	@include anim_hover_all;
-	@include bold;
+	@include regular;
 	 @include box_shadow;
-	padding: 14px 20px;
+	padding: 10px 15px;
 	text-transform: uppercase;
-	background: $giallo;
-	color: $blu;
+	background: $arancione;
+	color: $bianco;
 	display: inline-block;
-	font-size: 17px;
-	line-height: 15px;
-	font-style: normal;
-	font-style: italic!important;
+	font-size: 14px;
+	line-height: 12px;
+	//font-style: normal;
+	//font-style: italic!important;
 	cursor: pointer;
 	@media screen and (max-width: 450px) {
 		padding: 10px 15px;
@@ -588,18 +691,12 @@ header{
 	}
 	&:hover{
 		@include anim_hover_all;
-		background: $blu;
+		background: $navi;
 		color: $bianco;
 	}
 }
 
-.grad_bg{
-	background: #d5d7de;
-	background: -moz-linear-gradient(left, #d5d7de 0%, #fcf9cf 100%);
-	background: -webkit-linear-gradient(left, #d5d7de 0%,#fcf9cf 100%);
-	background: linear-gradient(to right, #d5d7de 0%,#fcf9cf 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5d7de', endColorstr='#fcf9cf',GradientType=1 );
-}
+
 
 
 
@@ -644,19 +741,19 @@ header{
 			margin-left: 10px;
 			margin-bottom: 0px;
 			font-size: 16px;
-			background: $blu;
+			background: $nero;
 			border-radius: 20px;
 			@include anim_hover_all;
 				a{
 					color: $bianco!important;
 					@include anim_hover_all;
 					&:hover{
-						color: $blu!important;
+						color: $nero!important;
 						@include anim_hover_all;
 					}
 				}
 					&:hover{
-						background: $giallo!important;
+						background: $arancione!important;
 						@include anim_hover_all;
 					}
 				
@@ -683,11 +780,11 @@ header{
 		line-height: 16px;
 		letter-spacing: 0.5px;
 		@include regular ; 
-		color: $blu;
+		color: $navi;
 		text-transform: inherit;
 	}
 	&:before{
-		content: url("../images/logo_domina.png");
+		content: url("../images/logo_soluzioni_meccaniche.png");
 		transform: scale(.7);
 		position: absolute;
 		top:50%;
@@ -703,7 +800,7 @@ header{
     background: transparent;
     position: relative;
 	&.int{
-		 min-height: 250px;
+		 min-height: 200px;
 	}
 }
 
@@ -717,18 +814,18 @@ header{
 
 
 .quad_item{
-	width: 20%;
+	//width: 20%;
 	display: inline-block;
 	position: relative;
 	overflow: hidden;
-	margin: 0 1%;
-	border-radius: 20px;
-	border: 5px solid $giallo;
+	//margin: 0 1%;
+	//border-radius: 20px;
+	//border: 5px solid $arancione;
 
-	width: 15%;
-	margin: 0px 1% 50px;
+	width: 22%;
+	margin: 0px 1% 200px;
 
-	@include border_shadow_block;
+	@include box_shadow;
 	@include anim_hover_all;
 	@media screen and (max-width: 1100px) { 
 		//width: 29%;
@@ -761,7 +858,7 @@ header{
 		position: relative;
 		display: block;	
 		z-index: 1;
-		background: $blu;
+		background: $navi;
 		//@include brightness;
 		img{
 			width: 100%;
@@ -776,8 +873,11 @@ header{
 			@include grayscale;
 		}
 		.logo_alpha{
-			background: $giallo;
-			opacity: 0.3;
+			@include gradient_2color;
+
+			  //background: $arancione_alpha url('../images/quadb.png') no-repeat center center;
+			  //background-size: 150px;
+			opacity: 0.5;
 			position: absolute;
 			z-index: 2;
 			width: 100%;
@@ -785,6 +885,19 @@ header{
 			top: 0px;
 			left: 0px;
 			@include anim_hover_all;
+
+		}
+		.logo_alpha_img{
+			background: url('../images/quadb.png') no-repeat center center;
+			background-size: 150px;
+			opacity: 0.5;
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+
 		}
 	}
 	.testo_quad{
@@ -805,12 +918,12 @@ header{
 		    	font-size: 24px;
 		    	line-height: 24px;
 		    	padding: 0px 10px;
-				h3{
+				h4{
 					color: $bianco;
-					@include bold;
-					font-size: 28px;
-					line-height: 26px;
-					@include text_shadow;
+					//@include bold;
+					//font-size: 25px;
+					//line-height: 23px;
+					//@include text_shadow;
 
 					@media screen and (max-width: 1280px) { 
 						font-size: 24px;
@@ -830,7 +943,7 @@ header{
 					}
 				}
 		    	.luogo{
-		    		color: $blu; 
+		    		color: $navi; 
 		    		@include regular; 
 		    		@include regular;
 		    		margin: 30px 0px 30px;  
@@ -853,7 +966,7 @@ header{
 						}
 			    	}
 			    	&>p{ padding: 0px 50px;}
-		    	.data{color: $blu; margin-bottom: 10px; font-size: 18px; line-height: 24px!important;}
+		    	.data{color: $navi; margin-bottom: 10px; font-size: 18px; line-height: 24px!important;}
 		    	.btn{
 		    		margin-top: 20px;
 		    		@media screen and (max-width: 1100px) { 
@@ -877,11 +990,26 @@ header{
 			width: 50%;
 		}
 	}
+	&.list{
+		.quad_item{
+			margin: 0px 1% 40px;
+			@media screen and (max-width: 960px) {
+				width: 40%;
+				margin: 0px 25px 50px;
+			}
+			@media screen and (max-width: 767px) {
+				width: 50%;
+			}
+		}
+	}
 }
 
+.pad_top_50{
+	padding-top: 50px;
+}
 
 footer{
-	background: $blu;
+	background: $nero;
 	color: $bianco;
 	width: auto;
 	position: relative;
@@ -891,8 +1019,8 @@ footer{
 			//padding: 40px 30px;
 		} 
 	a{
-		color: $giallo!important;
-		font-weight: bold;
+		color: $azzurro!important;
+		@include regular;
 		&:hover{
 			text-decoration: underline;
 		}
@@ -901,6 +1029,7 @@ footer{
 		display: inline-block;
 		width: 100%;
 		max-width: 249px;
+		padding-bottom: 20px;
 	}
 	.menu_privacy{
 		margin-top:20px;
@@ -910,16 +1039,18 @@ footer{
 				padding: 0px 10px;
 				margin: 0px;
 				border-right: 1px solid $grigio_chiaro;
+
 				a{
 					color: $grigio_chiaro;
-					text-transform: none;
+					text-transform: uppercase;
+
 					&:last-child{
 						//color: $grigio!important;
-						text-transform: none;
+						text-transform: uppercase;
 					}
 					&:hover{
 						color: $grigio_chiaro!important;
-						text-transform: none;
+						text-transform: uppercase;
 					}
 				}
 				&:first-child{
@@ -932,7 +1063,7 @@ footer{
 						//color: $grigio!important;
 						&:hover{
 							color: $grigio_chiaro!important;
-							text-transform: none;
+							text-transform: uppercase;
 						}
 					}
 				}
@@ -950,12 +1081,12 @@ footer{
 			margin-left: 10px;
 			margin-bottom: 0px;
 			font-size: 16px;
-			background: $blu_scuro;
+			background: $navi_scuro;
 			border-radius: 20px;
 				a{
 					color: $grigio_chiaro!important;
 					&:hover{
-						color: $blu!important;
+						color: $navi!important;
 					}
 				}
 			}
@@ -986,23 +1117,25 @@ footer{
 	position: fixed;
 	right: 30px;
 	bottom: 30px;
-	border-radius: 30px;
-	background: $blu_scuro;
-	//border: 1px solid $blu_scuro;
-	padding: 30px 18px 18px;
+	//border-radius: 30px;
+	background: $nero;
+	border: 1px solid $grigio;
+	//padding: 30px ;
 	text-align: center;
 	color: $bianco;
 	font-size: 33px;
 	font-style: normal;
-	line-height: 0px;
+	height: 50px;
+	width: 50px;
+	line-height: 80px;
 	z-index: 21;
 	display: block;
 	cursor: pointer;
 	@include anim_hover_all;
-	@include bold;
+	@include regular;
 	&:hover{
-		background: $giallo;
-		color: $blu;
+		background: $arancione;
+		color: $navi;
 		@include anim_hover_all;
 	}
 	@media screen and (max-width: 767px) {
@@ -1068,7 +1201,7 @@ section{
         width: 100%;
         height: auto;
         padding: 0px;
-         border-bottom: 4px solid $giallo;
+         border-bottom: 4px solid $arancione;
         //padding-bottom: 10px;
       }
     }
@@ -1186,6 +1319,9 @@ section{
 .cover{
   position: relative;
   z-index: 10;
+  &.int{
+	  //margin-bottom: 14px;
+  }
   &:before{
     position: absolute;
     width: 100%;
@@ -1226,9 +1362,7 @@ section{
             display:table-cell;
             vertical-align: middle;
             z-index: 3;
-            .testo_intro{
-            	padding: 25px;
-            }
+           
             p{
               padding: 20px 28% 30px;
               @media screen and (max-width: 960px) {
@@ -1307,22 +1441,12 @@ section{
 	}
 }
 
-.testo_intro{
-	background: url("../images/quad.png") center center no-repeat;
-	background-size: 70px;
-	padding: 50px 0px;
-	&.no_pad_top{
-		@media screen and (max-width: 960px) {
-			padding-top: 0px;
-		} 
-	}
-}
 
 .desc_intro{
-	padding: 0px 10%;
+	padding: 30px 20%;
 	a{
-	 	color: $blu;
-	 	@include bold;
+	 	color: $navi;
+	 	@include light;
 	 	text-decoration: underline;
 	}
 }
@@ -1333,17 +1457,20 @@ section{
 }
 
 .punta{
-	width: 200px;
+	width: 300px;
 	height: 50px;
 	background: url("../images/puntina.png") center top  no-repeat;
 	position: absolute;
 	left: 50%;
 	top:-1px;
-	margin-left: -100px;
+	margin-left: -150px;
 	z-index: 2;
 	@media screen and (max-width: 960px) {
 		top:-6px;
 	} 
+	&.big{
+		background: url("../images/puntina_big.png") center top  no-repeat;
+	}
 	&.blu{
 		background: url("../images/puntina_blu.png") center top  no-repeat;
 	}
@@ -1436,13 +1563,19 @@ section{
           }
         }
         h4{
-        	padding-bottom: 20px;
+        	padding-bottom: 15px;
 	        @media screen and (max-width: 960px) {
 	            padding-bottom: 8px;
             } 
         }
         p{
-        	padding: 0px 150px 20px;
+        	padding: 0px 50px 15px;
+        	text-transform: uppercase;
+        	font-size: 12px;
+        	line-height: 12px;
+        	@include regular;
+        	color: $arancione;
+        	//background: red;
         }
       }
     }
@@ -1470,8 +1603,8 @@ section{
 		text-align: center;
 	} 
 	a{
-		color: $blu;
-		@include bold;
+		color: $navi;
+		@include light;
 		text-decoration: underline;
 		&:hover{
 	    	text-decoration: underline;
@@ -1497,7 +1630,7 @@ section{
 	  margin: 30px 0px;
 	  width: 100%;
 	  height: auto;
-	  border-bottom: 4px solid $giallo;
+	  border-bottom: 4px solid $arancione;
 	}
 	.quad_item{
 	  text-align: center;
@@ -1557,8 +1690,8 @@ section{
 	      	font-size: 25px; 
 	      	line-height: 25px;
 	        margin-bottom: 50px;
-	        @include bold;
-	        background: $blu;
+	        @include light;
+	        background: $navi;
 	        color: $bianco;
 		    @media screen and (max-width: 767px) {
 		        padding: 30px 20px;
@@ -1571,7 +1704,7 @@ section{
 		position: relative;
 		overflow: hidden;
 		border-radius: 20px;
-		border: 5px solid $giallo;
+		border: 5px solid $arancione;
 		margin: 0px 1% 50px;
 		@include border_shadow_block;
 		@include anim_hover_all;
@@ -1607,7 +1740,7 @@ section{
         li{
             padding: 8px 0px;
             a{
-            	color: $blu;
+            	color: $navi;
 	            &.butt{
 	            	margin-right: 10px;
 	            }
@@ -1620,8 +1753,8 @@ section{
             li{
 	        	padding: 0px;
 				a{
-					color: $blu;
-					background: $giallo;
+					color: $navi;
+					background: $arancione;
 					text-decoration: none;
 					font-size: 12px;
 					line-height: inherit;
@@ -1635,8 +1768,8 @@ section{
 					}
 					&:hover{
 						text-decoration: none;
-						color: $giallo;
-						background: $blu;
+						color: $arancione;
+						background: $navi;
 					}
 				}
 	        } 
@@ -1655,13 +1788,147 @@ section{
 
 
 iframe{
-    background: $blu url("../images/logo_domina.png") center center no-repeat;
-    border-bottom: 4px solid $giallo;
+    background: $navi url("../images/logo_soluzioni_meccaniche.png") center center no-repeat;
+    border-bottom: 4px solid $arancione;
 }
 
 .spacer{
 	position: relative;
 	height: 80px;
+}
+
+
+
+
+// -------------------------- VIDEO
+
+
+@media screen and (max-width: 767px) { 
+		//background: url("images/cover_home.jpg");
+		//background-size: contain;
+
+    }
+
+    
+.video{
+	position: relative;
+	background: $nero;
+	@media screen and (max-width: 767px) { 
+		background: transparent;
+
+    }
+	.cover_video{
+		opacity: 0.5;
+		@media screen and (max-width: 767px) { 
+			opacity: 1;
+			//padding: 40px;
+			background-repeat: no-repeat!important;
+			background-size: contain!important;
+	    }
+	}
+	
+	.frase{
+		padding: 0px;
+		position: absolute;
+		z-index: 20;
+		top: 50%;
+		width: 100%;
+		height: 400px;
+		margin-top: -200px;
+		text-align: center;
+		@media screen and (max-width: 767px) { 
+	    	font-size: 16px;
+			line-height: 20px;
+			position: relative;
+			height: auto;
+			margin-top: 0px;
+			padding: 0px 20px;
+			padding-top: 40px;
+	    }
+	    @media screen and (max-width: 450px) { 
+	    	font-size: 13px;
+			line-height: 15px;
+	    }
+
+	    .cont_frase{
+	    	height: 400px;
+    		display: table;
+    		width: 100%;
+    		@media screen and (max-width: 767px) { 
+		    	display: block;
+		    	height: auto;
+		    }
+	    	.testo_frase{
+			    display:table-cell;
+			    vertical-align:middle;
+			     //padding-top: 120px;
+			    @media screen and (max-width: 767px) { 
+			    	display: block;
+			    }
+	    	}
+	    }
+		h3{
+			color: $bianco;
+			font-size: 40px;
+			line-height: 36px;
+			//opacity: 0.9;
+			@include light;
+			strong{
+				@include bold;
+				color: $azzurro;
+			}
+			@media screen and (max-width: 767px) { 
+				color: $navi;
+		    }
+		}
+		.btn_read{
+			padding: 25px 0px 0px 0px;
+			@include light;
+				color: $bianco;
+				text-transform: uppercase;
+				font-size: 12px;
+				line-height: 10px;
+
+				@media screen and (max-width: 767px) { 
+					color: $navi;
+			    }
+				img{
+					width: auto;
+					height: auto;
+					display: inline-block;
+				}
+				p{
+					padding: 0px;
+					padding-top: 5px;
+				}
+		
+		}
+		&.notext{
+			padding: 25% 150px 0px;
+			@media screen and (max-width: 1280px) { 
+				padding: 25% 80px 0px;
+		    }
+		    @media screen and (max-width: 1024px) { 
+				padding: 20% 30px 0px;
+		    }
+			@media screen and (max-width: 767px) { 
+				padding: 0px;
+		    }
+		}
+	}
+	img, video{
+		width: 100%;
+		height: auto;
+		//position: relative;
+
+		//z-index: 10;
+		//opacity: 0.5;
+		display: block;
+		@media screen and (max-width: 767px) { 
+			opacity: 1;
+			display: block;
+	    }
+	}
 }
 
 //@import 'scarti';
