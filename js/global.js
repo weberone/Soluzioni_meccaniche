@@ -138,3 +138,9 @@ $(window).scroll(function () {
     }
 });
 
+
+
+
+$(document).ready(function() {
+    $('body').addClass('page_int');
+});

@@ -488,11 +488,18 @@ header{
 				    padding: 10px;
 				   	//@include light;
 				   	//font-style: italic;
-				   	display: inline-block;
+					   display: inline-block;
+					   i{
+						@include anim_hover_all;
+					   }
 				   	&:hover {						
 				   		@include anim_hover_all;
 						background: $arancione;
 						text-transform: uppercase;
+						i{
+							color: $bianco;
+							@include anim_hover_all;
+						}
 					}
 				}
 				&.active{
@@ -632,6 +639,7 @@ header{
 		-moz-transition: 0.5s;
 		-webkit-transition: 0.5s;
 		-o-transition: 0.5s; 	
+		
 		@media screen and (max-width: 450px) {
 			margin:0 4px 0 0;
 		} 
@@ -643,21 +651,26 @@ header{
 			-webkit-transition: 0.5s;
 			-o-transition: 0.5s;
 		}
+		i{
+			font-size: 14px;
+		}
 		&.fb i {
-			left:7px;
+			left:8px;
 			top:5px;
 			@media screen and (max-width: 450px) {
 				left:6px;
 			} 
 		}
-		&.tw i {
-			left:6px;
+		&.yt i {
+			left:4px;
+			top:5px;
 			@media screen and (max-width: 450px) {
 				left:5px;
 			} 
 		}
-		&.in i {
-			left:6px;
+		&.is i {
+			left:5.5px;
+			top:5px;
 			@media screen and (max-width: 450px) {
 				left:5px;
 			} 
@@ -730,36 +743,108 @@ header{
 			letter-spacing: 1px;
 		}
 	}
-	nav.social{
-		margin: 20px 0px 0px 0px;
-		text-align: center;
-		ul{
-			list-style: none;
-			li{
-			margin-top: 10px;
+	.btn{
+		margin-top: 20px;
+	}
+}
+
+nav.social_nav{
+
+	margin-top: 30px;
+	ul{
+		li{
 			display: inline-block;
-			margin-left: 10px;
-			margin-bottom: 0px;
-			font-size: 16px;
-			background: $nero;
-			border-radius: 20px;
-			@include anim_hover_all;
-				a{
-					color: $bianco!important;
-					@include anim_hover_all;
-					&:hover{
-						color: $nero!important;
-						@include anim_hover_all;
+			a{
+				.icon {
+					position:relative;
+					text-align:center;
+					width:0px;
+					height:0px;
+					padding:20px;
+					border-top-right-radius: 	20px;
+					border-top-left-radius: 	20px;
+					border-bottom-right-radius: 20px;
+					border-bottom-left-radius: 	20px; 
+					-moz-border-radius: 		20px 20px 20px 20px;
+					-webkit-border-radius: 		20px 20px 20px 20px;
+					-khtml-border-radius: 		20px 20px 20px 20px;
+					color:#FFFFFF;
+					&.social {
+						float:left;
+						margin:0 8px 0 0;
+						cursor:pointer;
+						background: $navi;
+						color:$bianco;
+						transition: 0.5s;
+						-moz-transition: 0.5s;
+						-webkit-transition: 0.5s;
+						-o-transition: 0.5s; 	
+						@media screen and (max-width: 450px) {
+							margin:0 4px 0 0;
+						} 
+						&:hover {
+							background:$arancione;
+							color:$nero;
+							transition: 0.5s;
+							-moz-transition: 0.5s;
+							-webkit-transition: 0.5s;
+							-o-transition: 0.5s;
+						}
+						i {
+							font-size:20px;
+							position:absolute;
+							left:14px;
+							top:11px;
+							@media screen and (max-width: 450px) {
+								//font-size:11px;
+								//left:0px;
+							} 
+						}
+						&.fb i {
+							//eft:14px;
+							//top:10px;
+							@media screen and (max-width: 450px) {
+								//left:6px;
+							} 
+						}
+						&.yt i {
+							left:8px;
+							//top:10px;
+							@media screen and (max-width: 450px) {
+								//left:5px;
+							} 
+						}
+						&.in i {
+							left:12px;
+							//top:10px;
+							@media screen and (max-width: 450px) {
+								//left:5px;
+							} 
+						}
+						&.is i {
+							left:12px;
+							//top:10px;
+							@media screen and (max-width: 450px) {
+								//left:5px;
+							} 
+						}
+						&.em i {
+							left:10px;
+							//top:10px;
+							@media screen and (max-width: 450px) {
+								//left:5px;
+							} 
+						}
 					}
 				}
-					&:hover{
-						background: $arancione!important;
-						@include anim_hover_all;
-					}
-				
+
 			}
 		}
 	}
+	
+
+
+
 }
 
 .landscape{
